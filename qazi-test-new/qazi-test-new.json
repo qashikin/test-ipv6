@@ -1,0 +1,35 @@
+{
+  "name" : "qazi-test-new",
+  "jobMode" : "NOTEBOOK",
+  "description" : "",
+  "role" : "arn:aws:iam::590186200215:role/Admin",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-590186200215-us-east-1/scripts/qazi-test-new.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-job-insights" : "false",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-590186200215-us-east-1/temporary/",
+    "--enable-glue-datacatalog" : "true",
+    "library-set" : "analytics"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 5,
+  "timeout" : 480,
+  "maxCapacity" : 5.0,
+  "glueVersion" : "5.0",
+  "numberOfWorkers" : 5,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "test-ipv6",
+    "branch" : "main",
+    "folder" : "qazi-test-new"
+  }
+}
